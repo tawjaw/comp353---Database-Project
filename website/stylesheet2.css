@@ -1,0 +1,123 @@
+*{
+    font-family: "Helvetica";
+}
+
+
+
+body {
+  background-color: #333;
+    display: block;    
+}
+
+.navibar {
+    width: 99%;
+    position:fixed;
+    margin: -10px auto 0px auto;
+}
+
+.navibar > * {
+    padding: 5px;
+}
+
+ul {
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: #f3f3f3;
+}
+
+.first {
+    margin-left: 40px;
+}
+
+ul > li {
+    margin-left: 20px;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+li a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+li a.active {
+    color: white;
+    background-color: #476e9e;
+}
+
+
+.jai-prakash {
+    min-height: 200px;
+    width:  90%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid #f3f3f3 2px;
+    border-radius: 6px;
+    background-color: #f3f3f3;   
+    
+}
+
+.jai-prakash > * {
+    padding-left: 40px;  
+    padding-right: 40px;
+}
+
+
+h1 {
+    font-size: 60px;
+    font-weight: lighter;
+}
+
+p {
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+
+
+#clickers a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#clickers a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+#clickers a.active {
+    color: white;
+    background-color: #476e9e;
+}
+
+table {
+    
+    width: 70%;
+    
+}
+
+table td {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#Headings {
+    font-weight: bold;
+}
