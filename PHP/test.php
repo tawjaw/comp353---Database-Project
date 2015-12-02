@@ -1,8 +1,8 @@
 <?php
 
 $server_name = 'localhost::3306';
-$user = 'root';
-$pass = 'tawjaw39';
+$user = 'username';
+$pass = 'pass';
 
 $link = mysql_connect($server_name, $user, $pass);
 if (!$link) {
@@ -20,11 +20,12 @@ $result = mysql_query($sql, $link);
 if (! $result) {
    die('Could not get data: ' . mysql_error());
 } 
+//$id = 5 ;
 
-$HomePageLink =  "localhost:1024/home.php";
  // output data of each row
 while($row = mysql_fetch_array($result, MYSQL_ASSOC))
  {
+     $HomePageLink =  "home.php?id=" . $row["teacherID"];
      echo "id: " . $row["teacherID"]. " - Name: " . '<a href="' . $HomePageLink.'">'. $row["name"].'</a>' .  " " . "<br>";
  }
 mysql_close($link);
