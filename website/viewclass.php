@@ -1,15 +1,17 @@
 <!DOCTYPE html>
+<?php
+require_once('session.php');
+require_once 'config.php';
+$courseID = $_GET["courseID"];
+$sectionID = $_GET["sectionID"];
+?>
 <html>
 <head>
 
     <link type="text/css" rel="stylesheet" href="stylesheet2.css" /> 
     <title> View Class Information</title>
 </head>
-<?php
-require_once 'config.php';
-$courseID = $_GET["courseID"];
-$sectionID = $_GET["sectionID"];
-?>
+
 <body>
     <!-- NAVIGATION BAR BEGINS -->
     <div class="navibar">
@@ -21,8 +23,8 @@ $sectionID = $_GET["sectionID"];
           <li><a href="#news">Research</a></li>
           <li><a href="#contact">Journals</a></li>
             <ul style="float: right; padding-right: 15px; list-style-type:none"> 
-                <li> <a href=""> Personal Information </a></li>
-                <li> <a href=""> Log Out</a>  </li>
+                 <li> <a href=""><?php echo $_SESSION['name']; ?></a></li>
+                <li> <a href="all-courses.php?logOut=true"> Log Out</a>  </li>
             </ul>
         </ul>
         
