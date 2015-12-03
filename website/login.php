@@ -19,7 +19,6 @@
    	 $password=$_POST["password"];
 
 	$sql  = "SELECT teacherID, name FROM Teacher WHERE email='".$email."' AND password='".$password."';";
-	mysql_select_db('test');
 
 	$result = mysql_query($sql, $link);
 	global $failedLogin;
