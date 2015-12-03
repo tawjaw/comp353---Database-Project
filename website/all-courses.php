@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<?php
-require_once 'config.php';
-//TODO $_GET["teacherID"]
-$teacherID =1;
-?>
     <link type="text/css" rel="stylesheet" href="stylesheet2.css" /> 
     <title> All Courses</title>
 </head>
+<?php
+require_once 'config.php';
+
+$teacherID =1;
+?>
 <body>
     <!-- NAVIGATION BAR BEGINS -->
     <div class="navibar">
@@ -54,13 +53,21 @@ $teacherID =1;
                 <td> capacity</td>
             </tr>
             <?php
-            $sql = "select  
-Course.courseID as CourseID, Course.name as courseName, Course.code as courseCode, Course.credits as courseCredits, 
-Section.sectionID as sectionID, Section.semester as sectionSemester, Section.year as sectionYear,  Section.capacity as sectionCapacity,
-(select count(*) from enrolledin where enrolledin.courseID = Course.courseID and enrolledin.sectionID = Section.sectionID) as enrolled 
-from  Course, Section where (Course.courseID , Section.sectionID) IN (select courseID, sectionID from Teaches where teacherID = ".$teacherID.");
-";
-           mysql_select_db($database);
+            $sql = "SELECT Course.courseID as courseID, Course.name as courseName,
+                    Course.code as courseCode, Course.credits as courseCredits, 
+                    Section.sectionID as sectionID, Section.semester as sectionSemester, 
+                    Section.year as sectionYear,  Section.capacity as sectionCapacity,
+                    (select count(*) 
+                        FROM enrolledin 
+                        WHERE enrolledin.courseID = Course.courseID and enrolledin.sectionID = Section.sectionID) 
+                        as enrolled 
+                        FROM  Course, Section 
+                        WHERE Section.courseID = Course.courseID AND (Course.courseID , Section.sectionID) 
+                        IN (SELECT courseID, sectionID 
+                            FROM Teaches 
+                            WHERE teacherID = ".$teacherID.");
+                     ";
+          
            $result = mysql_query($sql, $link);
            
            if(! $result)
@@ -71,7 +78,7 @@ from  Course, Section where (Course.courseID , Section.sectionID) IN (select cou
            while($row = mysql_fetch_array($result,MYSQL_ASSOC))
            {
                echo "<tr>";
-               echo '<td><a href="viewclass.php?courseID='.$row["CourseID"].'&sectionID='.$row["sectionID"].'">'. $row["courseName"]. '</a></td>';
+               echo '<td><a href="viewclass.php?courseID='.$row["courseID"].'&sectionID='.$row["sectionID"].'">'. $row["courseName"]. '</a></td>';
                echo '<td>' .$row["courseCode"] .'</td>';
                echo '<td>' .$row["courseCredits"] . '</td>';
                echo '<td>' .$row["sectionSemester"] .'</td>';
