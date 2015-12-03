@@ -3,16 +3,8 @@
 <head>
 
 <?php
-
-$server_name = '';
-$user = '';
-$pass = '';
-$database = '';
-$link = mysql_connect($server_name, $user, $pass);
-if (!$link) {
-    die('Could not connect: ' . mysql_error());
-}
-
+require_once 'config.php';
+//TODO $_GET["teacherID"]
 $teacherID =1;
 ?>
     <link type="text/css" rel="stylesheet" href="stylesheet2.css" /> 
