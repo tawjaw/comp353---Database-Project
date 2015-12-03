@@ -19,7 +19,7 @@
           <li><a href="#news">Research</a></li>
           <li><a href="#contact">Journals</a></li>
             <ul style="float: right; padding-right: 15px; list-style-type:none"> 
-                <li> <a href=""><?php echo $_SESSION['name']; ?></a></li>
+                <li> <a href="personal-information.php"><?php echo $_SESSION['name']; ?></a></li>
                 <li> <a href="sans-bootstrap.php?logOut=true"> Log Out</a>  </li>
             </ul>
         </ul>
