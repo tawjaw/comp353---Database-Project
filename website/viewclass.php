@@ -9,6 +9,8 @@ $sectionID = $_GET["sectionID"];
 <head>
 
     <link type="text/css" rel="stylesheet" href="stylesheet2.css" /> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="grades.js"></script>
     <title> View Class Information</title>
 </head>
 
@@ -99,7 +101,8 @@ $sectionID = $_GET["sectionID"];
                 echo"<td>" .$row_student_info["sInternationality"]."</td>";
                 echo'<td><a href="mailto:'.$row_student_info["sEmail"].'">'.$row_student_info["sEmail"]."</td>";
                 echo"<td>" .$row_student_info["sFinalGrade"]."</td>";
-                echo"<td>Grades</td>";
+                echo"<td class='gradeShow' ><a >Grades</a><table class='grades'><tr id='Headings'><td>Component</td><td>Mark</td></tr><tr><td>Assingment 1</td><td>80%</td></tr><tr><td>Final Exam</td><td>100%</td></tr></table></td>";
+                echo "";
             }
         echo"</table>";
         
