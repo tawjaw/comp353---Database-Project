@@ -17,7 +17,7 @@
             </ul>
           <li class="first"><a href="all-courses.php">Courses </a></li>
           <li><a href="research.php">Research</a></li>
-          <li><a href="#contact">Journals</a></li>
+          <li><a href="journal-landing-page.php">Journals</a></li>
             <ul style="float: right; padding-right: 15px; list-style-type:none"> 
                 <li> <a href="personal-information.php"><?php echo $_SESSION['name']; ?></a></li>
                 <li> <a href="index.php?logOut=true"> Log Out</a>  </li>

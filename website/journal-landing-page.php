@@ -1,23 +1,28 @@
+<?php
+    require_once 'session.php';
+   require_once 'config.php';
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
 
     <link type="text/css" rel="stylesheet" href="stylesheet2.css" /> 
-    <title> Current Term Courses</title>
+    <title> Journal Information</title>
 </head>
 <body>
     <!-- NAVIGATION BAR BEGINS -->
     <div class="navibar">
         <ul>
             <ul style="float: left; list-style-type:none">
-                <li> <a href="#about">My Better Concordia</a></li>
+                <li> <a href="index.php">My Better Concordia</a></li>
             </ul>
-          <li class="first"><a  href="#home">Courses </a></li>
-          <li><a href="#news">Research</a></li>
-          <li><a href="#contact">Journals</a></li>
+          <li class="first"><a  href="all-courses.php">Courses </a></li>
+          <li><a href="research.php">Research</a></li>
+          <li><a class="active" href="">Journals</a></li>
             <ul style="float: right; padding-right: 15px; list-style-type:none"> 
-                <li> <a class="active" href=""> Personal Information </a></li>
-                <li> <a href=""> Log Out</a>  </li>
+                <li> <a  href="personal-information.php"><?php echo $_SESSION['name']; ?></a></li>
+                <li> <a href="index.php?logOut=true"> Log Out</a>  </li>
             </ul>
         </ul>
         
@@ -32,7 +37,7 @@
     
     <div class="jai-prakash">
     
-     <h1>  Journals: </h1>
+     <h1>  Journals </h1>
         <p> 
             These are the journals you are associated with: 
          

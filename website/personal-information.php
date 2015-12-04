@@ -19,7 +19,7 @@
             </ul>
           <li class="first"><a  href="all-courses.php">Courses </a></li>
           <li><a href="research.php">Research</a></li>
-          <li><a href="#contact">Journals</a></li>
+          <li><a href="journal-landing-page.php">Journals</a></li>
             <ul style="float: right; padding-right: 15px; list-style-type:none"> 
                 <li> <a class="active" href="personal-information.php"><?php echo $_SESSION['name']; ?></a></li>
                 <li> <a href="index.php?logOut=true"> Log Out</a>  </li>
@@ -70,7 +70,7 @@
         <br>
         
         
-        <table>
+        <table class="teacherInfo">
         
             <tr id="Headings">
                 <td> Committee Associations</td>
@@ -101,7 +101,7 @@
             
         </table>
         
-         <table>
+        <table class="teacherInfo">
         
             <tr id="Headings">
                 <td> Workshops </td>
@@ -120,12 +120,12 @@
                 } 
                 else if(mysql_num_rows($result)==0)
                 {
-                     echo "<tr><td id="sapayshall">None</td></tr>";
+                     echo "<tr><td >None</td></tr>";
                 }
                 else{
                     while($row = mysql_fetch_array($result,MYSQL_ASSOC))
                     {
-                    echo "<tr><td>".$row["name"]."</td><td id="sapayshall">".$row["startDate"]." - ".$row["endDate"]."</td></tr>";
+                    echo "<tr><td>".$row["name"]."</td><td >".$row["startDate"]." - ".$row["endDate"]."</td></tr>";
                     
                     }
                 }
@@ -138,11 +138,11 @@
         </table>
         
         
-        <table>
+        <table class="teacherInfo">
         
             <tr id="Headings">
                 <td> Conferences </td>
-                <td id="sapayshall2"> Dates Attended</td>
+                <td > Dates Attended</td>
                 
             </tr>
             
@@ -156,12 +156,12 @@
                 } 
                 else if(mysql_num_rows($result)==0)
                 {
-                     echo "<tr><td id="sapayshall2">None</td></tr>";
+                     echo "<tr><td >None</td></tr>";
                 }
                 else{
                     while($row = mysql_fetch_array($result,MYSQL_ASSOC))
                     {
-                    echo "<tr><td>".$row["name"]."</td><td id="sapayshall2">".$row["startDate"]." - ".$row["endDate"]."</td></tr>";
+                    echo "<tr><td>".$row["name"]."</td><td >".$row["startDate"]." - ".$row["endDate"]."</td></tr>";
                     
                     }
                 }

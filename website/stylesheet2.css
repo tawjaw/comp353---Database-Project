@@ -206,10 +206,6 @@ select {
     
 }
 
-#sapayshall {
-    padding-left: 180px;
-}
-
-#sapayshall2 {
-    padding-left: 220px;
+.teacherInfo td {
+    width:40%;
 }
