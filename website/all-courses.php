@@ -10,6 +10,10 @@
 
     <link type="text/css" rel="stylesheet" href="stylesheet2.css" /> 
     <title> All Courses</title>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="filter.js"></script>
+    
+    </head>
 
 <body>
     <!-- NAVIGATION BAR BEGINS -->
@@ -43,6 +47,28 @@
             These are the courses you have taught since the beginning of your time here. 
          
         </p>
+         <!--- FILTER BEGINS ---> 
+        <div class="filter2">
+            
+            <a href=""> Filters:</a>
+                    <form class="filter3">
+                       
+                        <span style="font-weight: bold"> From Semester: </span> 
+                        <input type="text" name="FromSemester">
+
+                        <span style="font-weight: bold"> To Semester </span>        <input type="text" name="ToSemester">
+
+                        <span style="font-weight: bold"> Student Name</span>                    
+                        <input type ="text" name = "Student Name">
+                        
+                        <input id="button" type="submit" name="submit"> </input>		
+</form> 
+            
+            <br> 
+                
+        </div>
+    
+    <!-- FILTER ENDS --> 
         
         <table>
             <tr id="Headings">
@@ -95,7 +121,7 @@
            
         
         <p id="clickers">
-            <a href="Current-term-courses.html"> View only Current Term courses</a>
+            
             <a href="javascript:history.back()">Go Back</a>
             
 
