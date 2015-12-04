@@ -120,12 +120,12 @@
                 } 
                 else if(mysql_num_rows($result)==0)
                 {
-                     echo "<tr><td>None</td></tr>";
+                     echo "<tr><td id="sapayshall">None</td></tr>";
                 }
                 else{
                     while($row = mysql_fetch_array($result,MYSQL_ASSOC))
                     {
-                    echo "<tr><td>".$row["name"]."</td><td>".$row["startDate"]." - ".$row["endDate"]."</td></tr>";
+                    echo "<tr><td>".$row["name"]."</td><td id="sapayshall">".$row["startDate"]." - ".$row["endDate"]."</td></tr>";
                     
                     }
                 }
@@ -142,7 +142,7 @@
         
             <tr id="Headings">
                 <td> Conferences </td>
-                <td id="sapayshall"> Dates Attended</td>
+                <td id="sapayshall2"> Dates Attended</td>
                 
             </tr>
             
@@ -156,12 +156,12 @@
                 } 
                 else if(mysql_num_rows($result)==0)
                 {
-                     echo "<tr><td>None</td></tr>";
+                     echo "<tr><td id="sapayshall2">None</td></tr>";
                 }
                 else{
                     while($row = mysql_fetch_array($result,MYSQL_ASSOC))
                     {
-                    echo "<tr><td>".$row["name"]."</td><td>".$row["startDate"]." - ".$row["endDate"]."</td></tr>";
+                    echo "<tr><td>".$row["name"]."</td><td id="sapayshall2">".$row["startDate"]." - ".$row["endDate"]."</td></tr>";
                     
                     }
                 }
