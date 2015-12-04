@@ -48,17 +48,35 @@
          
         </p>
          <!--- FILTER BEGINS ---> 
-        <div class="filter2">
-            
-            <a href=""> Filters:</a>
+       <div class="filter2">
+                <div id="divD">
+                    <a id= "filterD" href=""> Filters:</a>    </div>
                     <form class="filter3">
                        
-                        <span style="font-weight: bold"> From Semester: </span> 
-                        <input type="text" name="FromSemester">
+                        <span style="font-weight: bold"> From Semester: </span>  
+                        <select>
+                            <option value="Fall"> Fall</option>
+                            <option value="Winter"> WInter</option>
+                            <option value="Summer1"> Summer 1</option>
+                            <option value="Summer2"> Summer 2</option>
+                        </select> 
+                        <span style="font-weight: bold">  Year: </span> 
+                            <input type="text" name="Year">  <br> <br>
 
-                        <span style="font-weight: bold"> To Semester </span>        <input type="text" name="ToSemester">
+                        
 
-                        <span style="font-weight: bold"> Student Name</span>                    
+                        <span style="font-weight: bold"> To Semester:     </span>        
+                        <select style="margin-left: 5px;">
+                            <option value="toFall"> Fall</option>
+                            <option value="toWinter"> WInter</option>
+                            <option value="toSummer1"> Summer 1</option>
+                            <option value="toSummer2"> Summer 2</option>
+                        </select>
+                        
+                        <span style="font-weight: bold">    Year: </span> 
+                        <input type="text" name="toYear">  <br> <br>
+
+                        <span style="font-weight: bold"> Student Name: </span>                    
                         <input type ="text" name = "Student Name">
                         
                         <input id="button" type="submit" name="submit"> </input>		
@@ -67,6 +85,7 @@
             <br> 
                 
         </div>
+        
     
     <!-- FILTER ENDS --> 
         

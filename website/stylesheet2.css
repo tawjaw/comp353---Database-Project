@@ -192,3 +192,10 @@ input[type="text"] {
 	position:relative;
 	top:1px;
 }
+
+select {
+     border-radius: 5px;
+    border: 1px transparent;
+    box-shadow: 0px 0px 5px;
+    
+}
