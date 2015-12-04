@@ -80,7 +80,7 @@ echo "</table></center>";
   $tid= $_SESSION["teacherID"];
   $sql= mysql_query("  SELECT grantID, name, amount, RemainingAmount 
 						FROM ResearchGrant 
-						Where grantID IN  (SELECT grantID from GivenGrant where teacherID=3) ");
+						Where grantID IN  (SELECT grantID from GivenGrant where teacherID=".$tid.") ");
 						
 
 
