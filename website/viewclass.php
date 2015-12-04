@@ -101,7 +101,33 @@ $sectionID = $_GET["sectionID"];
                 echo"<td>" .$row_student_info["sInternationality"]."</td>";
                 echo'<td><a href="mailto:'.$row_student_info["sEmail"].'">'.$row_student_info["sEmail"]."</td>";
                 echo"<td>" .$row_student_info["sFinalGrade"]."</td>";
-                echo"<td class='gradeShow' ><a >Grades</a><table class='grades'><tr id='Headings'><td>Component</td><td>Mark</td></tr><tr><td>Assingment 1</td><td>80%</td></tr><tr><td>Final Exam</td><td>100%</td></tr></table></td>";
+                
+                echo"<td class='gradeShow' >
+                <a >Grades</a>
+                <table class='grades'>
+                <tr id='Headings'>
+                <td>Component</td>
+                <td>Weight</td>
+                <td>Mark</td></tr>";
+                $sql_grades = "select Grade.grade as grade, CourseComponent.type as type, CourseComponent.weight as weight
+                                FROM Grade, CourseComponent 
+                                where Grade.studentID =".$row_student_info["sID"].
+                                " and Grade.courseID =".$courseID. 
+                                " and Grade.sectionID =" .$sectionID.
+                                " and Grade.courseComponentID = CourseComponent.courseComponentID 
+                                and Grade.coursecomponentID IN 
+                                (select courseComponentID FROM CourseComponent 
+                                WHERE sectionID =".$sectionID." and courseID =".$courseID." );";
+                $result_grades = mysql_query($sql_grades, $link);
+                if(!$result_grades){die('Could not get data:  ' . mysql_error());}
+                while($row_grades = mysql_fetch_array($result_grades,MYSQL_ASSOC))
+                {
+                    echo "<tr><td>".$row_grades["type"]."</td>
+                    <td>".$row_grades["weight"]."</td>
+                    <td>".$row_grades["grade"]."</td></tr>";
+                }
+                echo"</table></td>";
+                //<tr><td>Assingment 1</td><td>80%</td></tr><tr><td>Final Exam</td><td>100%</td></tr></table></td>";
                 echo "";
             }
         echo"</table>";
