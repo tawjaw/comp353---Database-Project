@@ -141,8 +141,9 @@ table td {
     float:left;
 }
 
-.filterD {
+#filterD {
     margin:auto;
+    width: 40%
 }
 .filter2 > input {
     padding: 20px;

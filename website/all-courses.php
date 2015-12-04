@@ -50,7 +50,7 @@
          <!--- FILTER BEGINS ---> 
        <div class="filter2">
                 <div id="divD">
-                   <center> <a id= "filterD" href=""> Filters</a> </center>   </div>
+                   <center id="clickers"> <a id= "filterD" href=""> Filters</a> </center>   </div>
                    <center>
                     <form class="filter3">
                        
