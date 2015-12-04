@@ -71,7 +71,7 @@
 			Password: <br>
 			<input type="password" name="password" id ="password" placeholder= "Enter your Password"	/>
 			</label>
-		<input id="button" type="submit" name="submit"> </input>		
+		<input id="button" type="submit" name="submit"> Enter </input>		
 		<?php
 			if($failedLogin)
 				echo "<div id='failedLogin'><p>*Error. Please Enter Valid Credentials.</p></div>"

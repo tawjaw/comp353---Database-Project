@@ -66,6 +66,35 @@
         </p>
         
         
+        
+        
+        
+        <table>
+            <tr id="Headings">
+                <td> Classes Taught</td>
+            
+            </tr>
+            <?php 
+                    $sql  = "SELECT c.code,c.name FROM Teaches t, Course c WHERE t.courseID=c.courseID AND t.teacherID='".$_SESSION['teacherID']."';";
+
+                     $result = mysql_query($sql, $link);
+
+                 if (! $result) {
+                     die('Could not get data: ' . mysql_error());
+                } 
+    
+                else{
+                    while($row = mysql_fetch_array($result,MYSQL_ASSOC))
+                    {
+                    echo "<tr><td>".$row["code"]."</td><td>".$row["name"]."</td></tr>";
+                    
+                    }
+                }
+            ?>
+            
+            
+        </table>
+        
         <br>
         <br>
         

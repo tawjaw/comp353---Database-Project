@@ -40,17 +40,6 @@ li {
     float: left;
 }
 
-.grades {
-    background-color: #b3b3b3;
-    border-radius: 5px;
-    display: block;
-    width:100%;
-
-}
-
-.grades td{
-    white-space: nowrap;
-}
 li a {
     display: block;
     color: #666;
@@ -100,21 +89,20 @@ p {
 
 
 
-#clickers a,.gradeShow a {
+#clickers a {
     display: block;
     color: #666;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     border-radius: 5px;
-    clear:both;
 }
 
-#clickers a:hover:not(.active), .gradeShow a:hover:not(.active){
+#clickers a:hover:not(.active) {
     background-color: #ddd;
 }
 
-#clickers a.active,.gradeShow a.active {
+#clickers a.active {
     color: white;
     background-color: #476e9e;
 }
