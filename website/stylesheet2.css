@@ -133,3 +133,10 @@ table td {
 #Headings {
     font-weight: bold;
 }
+
+#supportGiven {
+    display:block;
+}
+#supportGiven p{
+    float:left;
+}

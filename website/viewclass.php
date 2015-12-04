@@ -95,7 +95,7 @@ $sectionID = $_GET["sectionID"];
             //add hyperlink to student name to student page with passing ID
             //add hyperlink to view grades to grade page with student course and section ID
                 echo"<td>" .$row_student_info["sID"]."</td>";
-                echo"<td>" .$row_student_info["sName"]."</td>";
+                echo"<td><a href='student-information.php?studentID=".$row_student_info['sID']."''>" .$row_student_info["sName"]."</a></td>";
                 echo"<td>" .$row_student_info["sStatus"]."</td>";
                 echo"<td>" .$row_student_info["sPosition"]."</td>";
                 echo"<td>" .$row_student_info["sInternationality"]."</td>";
