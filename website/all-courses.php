@@ -50,7 +50,8 @@
          <!--- FILTER BEGINS ---> 
        <div class="filter2">
                 <div id="divD">
-                    <a id= "filterD" href=""> Filters:</a>    </div>
+                   <center> <a id= "filterD" href=""> Filters</a> </center>   </div>
+                   <center>
                     <form class="filter3">
                        
                         <span style="font-weight: bold"> From Semester: </span>  
@@ -81,7 +82,7 @@
                         
                         <input id="button" type="submit" name="submit"> </input>		
 </form> 
-            
+           </center> 
             <br> 
                 
         </div>
@@ -89,7 +90,7 @@
     
     <!-- FILTER ENDS --> 
         
-        <table>
+        <table style='margin:auto;'>
             <tr id="Headings">
                 <td> Course Name </td>
                 <td> Course Code</td>

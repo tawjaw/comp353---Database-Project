@@ -141,13 +141,18 @@ table td {
     float:left;
 }
 
-
-.filter2 {
-    margin-left: 18px;
+.filterD {
+    margin:auto;
 }
-
 .filter2 > input {
     padding: 20px;
+}
+
+.filter3{
+    background-color: lightgray;
+    width:40%;
+    border-radius: 4px;
+    padding:10px;
 }
 
 .filter3 span {

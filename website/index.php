@@ -42,7 +42,6 @@
         </p>
         
         <p id="clickers"> 
-            <a href="Current-term-courses.html" > View current term courses</a>
             <a href="all-courses.php" > View All Courses </a>
            
         </p>
