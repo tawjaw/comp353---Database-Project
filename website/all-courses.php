@@ -16,10 +16,10 @@
     <div class="navibar">
         <ul>
             <ul style="float: left; list-style-type:none">
-                <li> <a href="#about">My Better Concordia</a></li>
+                <li> <a href="index.php">My Better Concordia</a></li>
             </ul>
-          <li class="first"><a class="active" href="#home">Courses </a></li>
-          <li><a href="#news">Research</a></li>
+          <li class="first"><a class="active" href="">Courses </a></li>
+          <li><a href="research.php">Research</a></li>
           <li><a href="#contact">Journals</a></li>
             <ul style="float: right; padding-right: 15px; list-style-type:none"> 
                 <li> <a href="personal-information.php"><?php echo $_SESSION['name']; ?></a></li>
@@ -38,7 +38,7 @@
     
     <div class="jai-prakash">
     
-     <h1>  All Courses taught so far: </h1>
+     <h1>  All Courses </h1>
         <p> 
             These are the courses you have taught since the beginning of your time here. 
          

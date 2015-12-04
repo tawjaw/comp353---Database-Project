@@ -14,18 +14,19 @@
     <div class="navibar">
         <ul>
             <ul style="float: left; list-style-type:none">
-                <li> <a href="#about">My Better Concordia</a></li>
+                <li> <a href="index.php">My Better Concordia</a></li>
             </ul>
-          <li class="first"><a href="sans-bootstrap.html">Courses </a></li>
-          <li><a class ="active" href="#">Research</a></li>
+          <li class="first"><a href="all-courses.php">Courses </a></li>
+          <li><a class ="active" href="">Research</a></li>
           <li><a href="#contact">Journals</a></li>
             <ul style="float: right; padding-right: 15px; list-style-type:none"> 
-                <li> <a href=""> Personal Information </a></li>
-                <li> <a href=""> Log Out</a>  </li>
+                <li> <a href="personal-information.php"><?php echo $_SESSION['name']; ?></a></li>
+                <li> <a href="index.php?logOut=true"> Log Out</a>  </li>
             </ul>
         </ul>
         
     </div>
+    
     
     <!--- NAVIGATION BAR ENDS --->
     
@@ -61,27 +62,26 @@ require_once('config.php');
             
     echo"</p><p></p>";
 								
-								
+			echo "<table style='margin:auto;'><tr clospan=4 id='Headings'><td colspan=4 style='font-size:20px;padding-bottom:20px;'>";		
 			echo "<b><center>";
 			echo mysql_num_rows($sql);
-			echo "<b>"." students actually have grants for this research";
-			echo "<center>";
-			echo "<table border='20' height='100' width='900' cellspacing='3' cellpadding='3'>
-			<tr>
-			<th>Name</th>
-			<th>Start Date</th>
-			<th>End Date</th>
-			<th>Grant Amount Attributed ($)</th>
+			echo "&nbsp;Research Students with Grants</b></b></td></tr>";
+			//echo "<center>";
+			echo "<tr id='Headings'>
+			<td>Name</td>
+			<td>Start Date</td>
+			<td>End Date</td>
+			<td>Grant Amount Attributed ($)</td>
 			</tr>";
 		//And we display the results
 		while($row = mysql_fetch_array($sql,MYSQL_ASSOC))
 		{
 			echo "<tr bgcolor='#E5F4F4'>";
 			//$admno=$row['student_id'];
-			echo "<td>"."<center>".$row['Name']."</td>";
-			echo "<td>"."<center>".$row['startDate']."</td>";
-			echo "<td>"."<center>".$row['endDate']."</td>";
-			echo "<td>"."<center>".$row['amount']."</td>";
+			echo "<td>".$row['Name']."</td>";
+			echo "<td>".$row['startDate']."</td>";
+			echo "<td>".$row['endDate']."</td>";
+			echo "<td>".$row['amount']."</td>";
 			//echo "<td>";
 			//echo "<center><a href='edit_user_by_id.php?admno=$admno&edit=Search'>Edit details</a>";
 			//echo "</td>";
@@ -97,7 +97,8 @@ require_once('config.php');
             <a href="" > View list of all grants received  </a>
             <a href="" > View List of grants you have dispersed </a>
            <a href ="" > View research you're involved in</a>
-            < a href ="" > View list of students under your supervision</a>
+            <a href ="" > View list of students under your supervision</a>
+			<a href="javascript:history.back()">Go Back</a>
         </p>
         
         

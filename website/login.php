@@ -4,7 +4,7 @@
    $failedLogin=false;
 
   if(isset($_SESSION["teacherID"])){
-        header("Location: sans-bootstrap.php");
+        header("Location: index.php");
 
    }
 
@@ -36,7 +36,7 @@
         $_SESSION['name']=$value["name"];
         $failedLogin=false;
         mysql_close($link);
-        header("Location: sans-bootstrap.php");
+        header("Location: index.php");
     }
 
    }

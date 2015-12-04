@@ -14,14 +14,14 @@
     <div class="navibar">
         <ul>
             <ul style="float: left; list-style-type:none">
-                <li> <a href="#about">My Better Concordia</a></li>
+                <li> <a href="index.php">My Better Concordia</a></li>
             </ul>
-          <li class="first"><a href="sans-bootstrap.html">Courses </a></li>
-          <li><a class ="active" href="#">Research</a></li>
+          <li class="first"><a href="all-courses.php">Courses </a></li>
+          <li><a class ="active" href="">Research</a></li>
           <li><a href="#contact">Journals</a></li>
             <ul style="float: right; padding-right: 15px; list-style-type:none"> 
-                <li> <a href=""> Personal Information </a></li>
-                <li> <a href=""> Log Out</a>  </li>
+                <li> <a href="personal-information.php"><?php echo $_SESSION['name']; ?></a></li>
+                <li> <a href="index.php?logOut=true"> Log Out</a>  </li>
             </ul>
         </ul>
         

@@ -11,17 +11,17 @@
 </head>
 <body>
     <!-- NAVIGATION BAR BEGINS -->
-    <div class="navibar">
+   <div class="navibar">
         <ul>
             <ul style="float: left; list-style-type:none">
-                <li> <a href="#about">My Better Concordia</a></li>
+                <li> <a href="index.php">My Better Concordia</a></li>
             </ul>
-          <li class="first"><a href="sans-bootstrap.html">Courses </a></li>
-          <li><a class ="active" href="#">Research</a></li>
+          <li class="first"><a href="all-courses.php">Courses </a></li>
+          <li><a class ="active" href="">Research</a></li>
           <li><a href="#contact">Journals</a></li>
             <ul style="float: right; padding-right: 15px; list-style-type:none"> 
-                <li> <a href=""> Personal Information </a></li>
-                <li> <a href=""> Log Out</a>  </li>
+                <li> <a href="personal-information.php"><?php echo $_SESSION['name']; ?></a></li>
+                <li> <a href="index.php?logOut=true"> Log Out</a>  </li>
             </ul>
         </ul>
         
@@ -36,9 +36,15 @@
     
     <div class="jai-prakash">
 
-     <h1><center>  All the research from school:</h1>
+     <h1>All Research</h1>
 	 
-	 
+	 <table style="margin:auto;">
+      <tr id="Headings"><td colspan=4 style="font-size:20px;padding-bottom:10px;"><center>Concordia's Research</center></td></tr>
+            <tr id="Headings">
+                <td>Research ID</td>
+                <td>Name</td>
+                <td>Details</td>
+            </tr>
 
   <?php     
   require_once('config.php');
@@ -46,7 +52,7 @@
   
   if($sql)
 	{
-		echo "<b><center>";
+		/*echo "<b><center>";
 		echo "<b>"." There exists ".mysql_num_rows($sql)." research records.";
 		echo "<center>";
 		echo "<table border='20' height='100' width='900' cellspacing='3' cellpadding='3' >
@@ -54,15 +60,15 @@
 		<th>Research ID</th>
 		<th>Name</th>
 		<th>Details</th>
-		</tr>";
+		</tr>";*/
 		//display the results
 		while($row = mysql_fetch_array($sql,MYSQL_ASSOC))
 		{
 			echo "<tr>";
 			$admno=$row['researchID'];
-			echo "<td>"."<center>".$row['researchID']."</td>";
-			echo "<td>"."<center>".$row['name']."</td>";
-			echo "<td>"."<center>".$row['details']."</td>";
+			echo "<td>".$row['researchID']."</td>";
+			echo "<td>".$row['name']."</td>";
+			echo "<td>".$row['details']."</td>";
 			echo "<td>";
 			echo "<center><a href='research-students.php?admno=$admno&edit=Search'>Details</a>";
 			echo "</td>";

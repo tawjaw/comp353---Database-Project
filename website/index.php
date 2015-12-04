@@ -6,21 +6,21 @@
 <head>
 
     <link type="text/css" rel="stylesheet" href="stylesheet2.css" /> 
-    <title> My Concordia Home Page</title>
+    <title> Home Page</title>
 </head>
 <body>
     <!-- NAVIGATION BAR BEGINS -->
     <div class="navibar">
         <ul>
             <ul style="float: left; list-style-type:none">
-                <li> <a href="#about">My Better Concordia</a></li>
+                <li> <a href="">My Better Concordia</a></li>
             </ul>
-          <li class="first"><a class="active" href="all-courses.php">Courses </a></li>
-          <li><a href="#news">Research</a></li>
+          <li class="first"><a href="all-courses.php">Courses </a></li>
+          <li><a href="research.php">Research</a></li>
           <li><a href="#contact">Journals</a></li>
             <ul style="float: right; padding-right: 15px; list-style-type:none"> 
                 <li> <a href="personal-information.php"><?php echo $_SESSION['name']; ?></a></li>
-                <li> <a href="sans-bootstrap.php?logOut=true"> Log Out</a>  </li>
+                <li> <a href="index.php?logOut=true"> Log Out</a>  </li>
             </ul>
         </ul>
         
