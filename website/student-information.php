@@ -87,7 +87,7 @@
                 <td> Final Grade </td>
             </tr>
              <?php 
-                     $sql  = "SELECT c.code,c.name,e.finalGrade,e.sectionID,e.courseID FROM EnrolledIn e, Course c WHERE e.courseID=c.courseID AND e.studentID='".$_GET['studentID']."';";
+                     $sql  = "SELECT c.code,c.name,e.finalGrade,e.sectionID,e.courseID , t.teacherID FROM EnrolledIn e, Course c, Teaches t WHERE e.courseID= t.courseID and e.sectionID = t.sectionID and e.courseID=c.courseID AND e.studentID='".$_GET['studentID']."';";
  
                       $result = mysql_query($sql, $link);
  
@@ -101,7 +101,10 @@
                  else{
                      while($row = mysql_fetch_array($result,MYSQL_ASSOC))
                      {
-                     echo "<tr><td><a href='viewclass.php?courseID=".$row["courseID"]."&sectionID=".$row["sectionID"]."'>".$row["code"]."&nbsp;&nbsp;&nbsp;---&nbsp;&nbsp;&nbsp;".$row["name"]."</a></td><td>".$row["finalGrade"]."</td></tr>";
+                         echo "<tr><td>";
+                         if($row["teacherID"] == $_SESSION['teacherID'])
+                            echo"<a href='viewclass.php?courseID=".$row["courseID"]."&sectionID=".$row["sectionID"]."'>";
+                     echo $row["code"]."&nbsp;&nbsp;&nbsp;---&nbsp;&nbsp;&nbsp;".$row["name"]."</a></td><td>".$row["finalGrade"]."</td></tr>";
                      
                      }
                  }
