@@ -140,3 +140,62 @@ table td {
 #supportGiven p{
     float:left;
 }
+
+
+.filter2 {
+    margin-left: 18px;
+}
+
+.filter2 > input {
+    padding: 20px;
+}
+
+.filter3 span {
+    padding 20px;
+}
+
+.filter3 input {
+    padding-left: 20px;
+}
+
+input[type="text"] {
+    border-radius: 5px;
+    border: 1px transparent;
+    box-shadow: 0px 0px 5px;
+}
+
+#button {
+	background-color:#557bbd;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:4px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding-left: 20px;
+    padding-right: 20px;
+	text-decoration:none;
+    margin-left: 18px;
+    margin-top: 5px;
+    border: transparent 1px;
+    box-shadow: 0px 0px 0px;
+    transition-property: box-shadow, border;
+    transition-duration: 0.3s;
+}
+#button:hover {
+	background-color:#476e9e;
+    box-shadow: 0px 0px 5px;
+}
+#button:active {
+	position:relative;
+	top:1px;
+}
+
+select {
+     border-radius: 5px;
+    border: 1px transparent;
+    box-shadow: 0px 0px 5px;
+    
+}
