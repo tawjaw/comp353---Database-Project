@@ -1,3 +1,7 @@
+<?php
+    require_once 'session.php';
+   require_once 'config.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,22 +35,46 @@
     <!--- MAIN CONTENT BOX BEGINS --->
     
     <div class="jai-prakash">
-    
-     <h1>  Research Grants !</h1>
-        <p> 
-            Total Grant Money Remaining : ???? <br>
-            Total Amount of Grant Money Spent this year : ????
-            
-            
-        </p>
-        
-        <p> </p>
+
+     <h1><center>  All the research from school:</h1>
+	 
+	 
+
+  <?php     
+  require_once('config.php');
+  $sql= mysql_query("SELECT researchID,name,details FROM Research ORDER BY researchID");
+  
+  if($sql)
+	{
+		echo "<b><center>";
+		echo "<b>"." There exists ".mysql_num_rows($sql)." research records.";
+		echo "<center>";
+		echo "<table border='20' height='100' width='900' cellspacing='3' cellpadding='3' >
+		<tr>
+		<th>Research ID</th>
+		<th>Name</th>
+		<th>Details</th>
+		</tr>";
+		//display the results
+		while($row = mysql_fetch_array($sql,MYSQL_ASSOC))
+		{
+			echo "<tr>";
+			$admno=$row['researchID'];
+			echo "<td>"."<center>".$row['researchID']."</td>";
+			echo "<td>"."<center>".$row['name']."</td>";
+			echo "<td>"."<center>".$row['details']."</td>";
+			echo "<td>";
+			echo "<center><a href='research-students.php?admno=$admno&edit=Search'>Details</a>";
+			echo "</td>";
+			echo "</tr>";
+		}
+	}
+echo "</table></center>";
+	?>	
+		
         
         <p id="clickers"> 
-            <a href="" > View list of all grants received  </a>
-            <a href="" > View List of grants you have dispersed </a>
-           <a href ="" > View research you're involved in</a>
-            < a href ="" > View list of students under your supervision</a>
+            <a href="research.php" > Back </a>
         </p>
         
         

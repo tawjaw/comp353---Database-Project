@@ -1,3 +1,7 @@
+<?php
+    require_once 'session.php';
+   require_once 'config.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,16 +36,21 @@
     
     <div class="jai-prakash">
     
-     <h1>  Manage your research here !</h1>
+     <h1>  Research Grants !</h1>
         <p> 
-            Please choose an option from the following list:
-         
+            Total Grant Money Remaining : ???? <br>
+            Total Amount of Grant Money Spent this year : ????
+            
+            
         </p>
         
+        <p> </p>
+        
         <p id="clickers"> 
-            <a href="" > View Research Grant information </a>
-            <a href="" > View your research students </a>
+            <a href="" > View list of all grants received  </a>
+            <a href="" > View List of grants you have dispersed </a>
            <a href ="" > View research you're involved in</a>
+            < a href ="" > View list of students under your supervision</a>
         </p>
         
         
