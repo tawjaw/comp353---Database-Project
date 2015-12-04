@@ -6,9 +6,14 @@
 <html>
 <head>
 
+
     <link type="text/css" rel="stylesheet" href="stylesheet2.css" /> 
-    <title> Research </title>
-</head>
+    <title> All Courses</title>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="filter.js"></script>
+    
+    </head>
+
 <body>
     <!-- NAVIGATION BAR BEGINS -->
     <div class="navibar">
@@ -16,9 +21,9 @@
             <ul style="float: left; list-style-type:none">
                 <li> <a href="index.php">My Better Concordia</a></li>
             </ul>
-          <li class="first"><a href="all-courses.php">Courses </a></li>
-          <li><a class ="active" href="">Research</a></li>
-          <li><a href="journals.php">Journals</a></li>
+          <li class="first"><a class="active" href="">Courses </a></li>
+          <li><a href="research.php">Research</a></li>
+           <li><a href="journals.php">Journals</a></li>
             <ul style="float: right; padding-right: 15px; list-style-type:none"> 
                 <li> <a href="personal-information.php"><?php echo $_SESSION['name']; ?></a></li>
                 <li> <a href="index.php?logOut=true"> Log Out</a>  </li>
@@ -36,26 +41,29 @@
     
     <div class="jai-prakash">
     
-     <h1>Research </h1>
-
-     <table style="margin:auto;">
+     <h1><center>  Research</h1>
+	    <table style="margin:auto;">
      	<tr id="Headings"><td colspan=4 style="font-size:20px;padding-bottom:10px;"><center><?php echo $_SESSION['name'] ?>'s Research</center></td></tr>
             <tr id="Headings">
                 <td>Research ID</td>
                 <td>Name</td>
                 <td>Details</td>
             </tr>
+	 
+	 
   <?php  
 //RESEARCHES BY TEACHER LOGGED IN  
+  require_once('config.php');
   $tid= $_SESSION["teacherID"];
   $sql= mysql_query("SELECT Research.researchID,Research.name,Research.details FROM Research,Teacher WHERE Teacher.teacherID=$tid and Teacher.teacherID=Research.teacherID");
   if($sql)
 	{
-		//echo "<b><center>";
-		//echo "<b>"." Your name is associated with ".mysql_num_rows($sql)." research.";
-		//echo "<center>";
-		//echo "<table border='20' height='100' width='900' cellspacing='3' cellpadding='3' >
-		/*<tr>
+		/*
+		echo "<b><center>";
+		echo "<b>"." Your name is associated with ".mysql_num_rows($sql)." research.";
+		echo "<center>";
+		echo "<table border='20' height='100' width='900' cellspacing='3' cellpadding='3' >
+		<tr>
 		<th>Research ID</th>
 		<th>Name</th>
 		<th>Details</th>
@@ -114,7 +122,7 @@ echo "</table></center>";
 			echo "<td>".$row['amount']."</td>";
 			echo "<td>".$row['RemainingAmount']."</td>";
 			echo "<td>";
-			echo "<center><a href='research-students.php?admno=$admno&edit=Search'>Details</a>";
+			echo "<center><a href='grant-students.php?admno=$admno&edit=Search'>Details</a>";
 			echo "</td>";
 			echo "</tr>";
 		}
@@ -125,15 +133,15 @@ echo "</table></center>";
 
 	?>	
 		
-		
-		
 	
-        
+        <p></p>
         <p id="clickers"> 
-			<a href="javascript:history.back()">Go Back</a>
+          <!--  <a href="all-research.php" > View ALL Research </a>
+			    <a href="all-grant.php" > View ALL Grant information </a> -->
+			<a href="students-supervised.php" > View ALL students supervised </a>
         </p>
         
-     
+        
     
     </div>
   

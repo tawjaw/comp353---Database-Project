@@ -141,11 +141,11 @@
                           if(isset($_GET['fy']) ? (int) $_GET['fy'] : null)
                             {
                                 
-                                    {$sqlMaxAverage = $sqlMaxAverage. " AND section.year >= ".$_GET['fy'];}
+                                    {$sqlMaxAverage = $sqlMaxAverage. " AND Section.year >= ".$_GET['fy'];}
                                 }
                        
                             if(isset($_GET['ty']) ? (int) $_GET['ty'] : null)
-                            {$sqlMaxAverage = $sqlMaxAverage. " AND section.year <= ".$_GET['ty'];}
+                            {$sqlMaxAverage = $sqlMaxAverage. " AND Section.year <= ".$_GET['ty'];}
                        
                         if(isset($_GET["cn"]))
                             {$sqlMaxAverage = $sqlMaxAverage. " AND Course.code = '".$_GET['cn']."'";}
@@ -172,19 +172,19 @@
                     Section.year as sectionYear,  Section.capacity as sectionCapacity,
                     Section.averageGrade as AverageGrade,
                     (select count(*) 
-                        FROM enrolledin 
-                        WHERE enrolledin.courseID = Course.courseID and enrolledin.sectionID = Section.sectionID) 
+                        FROM EnrolledIn 
+                        WHERE EnrolledIn.courseID = Course.courseID and EnrolledIn.sectionID = Section.sectionID) 
                         as enrolled 
                         FROM  Course, Section 
                         WHERE Section.courseID = Course.courseID";
                         if(isset($_GET['fy']) ? (int) $_GET['fy'] : null)
                             {
                                 
-                                    {$sql = $sql. " AND section.year >= ".$_GET['fy'];}
+                                    {$sql = $sql. " AND Section.year >= ".$_GET['fy'];}
                                 }
                        
                             if(isset($_GET['ty']) ? (int) $_GET['ty'] : null)
-                            {$sql = $sql. " AND section.year <= ".$_GET['ty'];}
+                            {$sql = $sql. " AND Section.year <= ".$_GET['ty'];}
                        
                         if(isset($_GET["cn"]))
                             {$sql = $sql. " AND Course.code = '".$_GET['cn']."'";}

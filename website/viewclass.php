@@ -1,10 +1,11 @@
-<!DOCTYPE html>
 <?php
-require_once('session.php');
-require_once 'config.php';
+    require_once('session.php');
+   require_once 'config.php';
 $courseID = $_GET["courseID"];
 $sectionID = $_GET["sectionID"];
 ?>
+
+<!DOCTYPE html>
 <html>
 <head>
 
@@ -45,8 +46,8 @@ $sectionID = $_GET["sectionID"];
     Section.sectionID as sectionID, Section.semester as sectionSemester,
     Section.year as sectionYear,  Section.capacity as sectionCapacity,
     (select count(*) 
-            FROM enrolledin 
-            WHERE enrolledin.courseID = ".$courseID." AND enrolledin.sectionID =" .$sectionID.") 
+            FROM EnrolledIn 
+            WHERE EnrolledIn.courseID = ".$courseID." AND EnrolledIn.sectionID =" .$sectionID.") 
             AS enrolled 
     FROM Course, Section
     WHERE Course.courseID = " .$courseID. " AND Section.sectionID = " .$sectionID." AND Section.courseID = Course.courseID;";
@@ -74,7 +75,7 @@ $sectionID = $_GET["sectionID"];
                 E.studentID AS sID, E.FinalGrade as sFinalGrade, S.name AS sName, 
                 S.status AS sStatus, S.position AS sPosition, 
                 S.internationality AS sInternationality, S.email as sEmail
-                FROM Enrolledin AS E, Student AS S
+                FROM EnrolledIn AS E, Student AS S
                 WHERE E.CourseID =".$courseID." AND E.SectionID = ".$sectionID." AND E.studentID = S.StudentID;";
         $result_student_info = mysql_query($sql_student_info, $link);
         if(!$result_student_info){die('Could not get data:  ' . mysql_error());}

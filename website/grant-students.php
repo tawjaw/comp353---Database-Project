@@ -32,6 +32,7 @@
         
     </div>
     
+    
     <!--- NAVIGATION BAR ENDS --->
     
     <br> <br> <br>
@@ -47,7 +48,31 @@ require_once('config.php');
 	if(isset($_GET['edit']))
 		{
 			$nb=mysql_real_escape_string($_GET['admno']);
-			  $sql= mysql_query("(SELECT (Select name from student where SupervisedResearch.studentID=student.studentID) as Name, startDate, endDate, amount
+			/*  $sql= mysql_query("(SELECT (Select name from student where SupervisedResearch.studentID=student.studentID) as Name, startDate, endDate, amount
+									FROM SupervisedResearch
+									WHERE SupervisedResearch.researchID=$nb)
+								");
+								
+			  $grantmoney= mysql_query("Select grantID, amount, name, RemainingAmount from ResearchGrant where
+												(SELECT grantID FROM SupervisedResearch where SupervisedResearch.researchID=$nb ORDER BY grantID LIMIT 1)=ResearchGrant.grantID");
+								
+				$research=mysql_query("SELECT name from Research where researchID=$nb");
+				$row3 = mysql_fetch_row($research); */
+
+				$nbresearch=mysql_query("SELECT DISTINCT researchID from SupervisedResearch where grantID=$nb");
+				//$row4 = mysql_fetch_row($research);
+				echo"<center><h1>  Grant details:</h1>";
+				echo "<br>".mysql_num_rows($nbresearch)." research are linked to this grant"; 
+				
+				
+				
+//$row4 = mysql_query("SELECT DISTINCT researchID from SupervisedResearch where grantID=$nb");
+for($i=0; $i<mysql_num_rows($nbresearch);$i++){
+while($row4 = mysql_fetch_array($nbresearch,MYSQL_ASSOC))
+{
+	
+	$nb=$row4['researchID'];
+	$sql= mysql_query("(SELECT (Select name from student where SupervisedResearch.studentID=student.studentID) as Name, startDate, endDate, amount
 									FROM SupervisedResearch
 									WHERE SupervisedResearch.researchID=$nb)
 								");
@@ -57,18 +82,18 @@ require_once('config.php');
 								
 				$research=mysql_query("SELECT name from Research where researchID=$nb");
 				$row3 = mysql_fetch_row($research);
-
-
+	
     while($row2 = mysql_fetch_array($grantmoney,MYSQL_ASSOC)){
-    echo"<center><h1>  Students enrolled in this research:</h1>";
-    echo"<center><p>"."Research ID#: $nb ". "<br>";
+    
+    echo"<center><p><br><br><br>"."Research ID#:".$row4['researchID']. "<br>";
 	echo "Research name: ".$row3['0']. "<br>". "<br>";  
-	echo "Grant ID#: ".$row2['grantID']. "<br>";
-	echo "Grant details: ".$row2['name']. "<br>". "<br>";
-	echo "Grant Money available: ". "<br>";
-    echo "Total Amount: ".$row2['amount']."$". "<br>";
-	echo "Remaining Amount: ".$row2['RemainingAmount']."$". "<br>";}
-    echo "<br>".mysql_num_rows($sql)." students actually have grants for this research";        
+	//echo "Grant ID#: ".$row2['grantID']. "<br>";
+	//echo "Grant details: ".$row2['name']. "<br>". "<br>";
+	//echo "Grant Money attributed to this entire project: ". "<br>";
+   // echo "Total Amount: ".$row2['amount']."$". "<br>";
+	//echo "Remaining Amount: ".$row2['RemainingAmount']."$". "<br>";}
+	
+    echo mysql_num_rows($sql)." students actually have grants for this research";        
             
     echo"</p>";
 								
@@ -103,7 +128,9 @@ require_once('config.php');
 		}
 		echo "</table></center>";
 	}
-		
+}
+}	
+}	
 	?>	
 		
 		

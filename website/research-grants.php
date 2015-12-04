@@ -6,9 +6,14 @@
 <html>
 <head>
 
+
     <link type="text/css" rel="stylesheet" href="stylesheet2.css" /> 
-    <title> Research </title>
-</head>
+    <title> All Courses</title>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="filter.js"></script>
+    
+    </head>
+
 <body>
     <!-- NAVIGATION BAR BEGINS -->
     <div class="navibar">
@@ -16,9 +21,9 @@
             <ul style="float: left; list-style-type:none">
                 <li> <a href="index.php">My Better Concordia</a></li>
             </ul>
-          <li class="first"><a href="all-courses.php">Courses </a></li>
-          <li><a class ="active" href="">Research</a></li>
-          <li><a href="journals.php">Journals</a></li>
+          <li class="first"><a class="active" href="">Courses </a></li>
+          <li><a href="research.php">Research</a></li>
+           <li><a href="journals.php">Journals</a></li>
             <ul style="float: right; padding-right: 15px; list-style-type:none"> 
                 <li> <a href="personal-information.php"><?php echo $_SESSION['name']; ?></a></li>
                 <li> <a href="index.php?logOut=true"> Log Out</a>  </li>

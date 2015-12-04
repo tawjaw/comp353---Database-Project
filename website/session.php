@@ -1,5 +1,5 @@
 <?php
-	ini_set('session.save_path','tmp');
+	ini_set('session.save_path','');
 	session_start();
 
 if(!isset($_SESSION["teacherID"])){
