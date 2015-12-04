@@ -23,7 +23,7 @@ $sectionID = $_GET["sectionID"];
             </ul>
           <li class="first"><a class="active" href="all-courses.php">Courses </a></li>
           <li><a href="research.php">Research</a></li>
-          <li><a href="journal-landing-page.php">Journals</a></li>
+          <li><a href="journals.php">Journals</a></li>
             <ul style="float: right; padding-right: 15px; list-style-type:none"> 
                  <li> <a href="personal-information.php"><?php echo $_SESSION['name']; ?></a></li>
                 <li> <a href="all-courses.php?logOut=true"> Log Out</a>  </li>
